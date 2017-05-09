@@ -3,9 +3,6 @@
 global.fs = require('fs');
 global.util = require('util');
 
-global.output = null;
-global.api = null;
-
 global.debug = true; // set to false upon production
 
 var files = fs.readdirSync(__dirname + '/children/');
@@ -43,7 +40,8 @@ global.nlog = function(message, code) {
 module.exports.handler = (event, context, callback) => {
     nlog('initializing lambda', 1);
     context.callbackWaitsForEmptyEventLoop = false;
-    
+    event.function = event.params.header.soapaction;
+
     if (typeof event.function === 'undefined') {
         callback(new Error('function name is undefined')); return false;
     }
