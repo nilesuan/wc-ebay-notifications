@@ -1,0 +1,22 @@
+{
+  "name": "notifications",
+  "version": "1.0.0",
+  "description": "WidgetChimp Ebay Notifications Handling Function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ebay",
+    "notifications",
+    "widgt",
+    "chimp"
+  ],
+  "author": "Nile Suan",
+  "license": "ISC",
+  "lambda": {
+    "region": "us-east-1",
+    "publish": false,
+    "functions": []
+  }
+}
